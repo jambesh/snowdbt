@@ -1,3 +1,11 @@
+/******
+
+Customer Order model combine data from the customer raw table and order raw table 
+based on customer id.
+Version : 2.0
+
+******/
+
 with customer_orders as (
     select
         id as customer_id,
