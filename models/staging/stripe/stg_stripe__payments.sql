@@ -39,4 +39,5 @@ renamed as (
 
 )
 
+/* now query the main table */
 select * from renamed
