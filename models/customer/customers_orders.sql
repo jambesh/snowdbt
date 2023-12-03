@@ -13,7 +13,8 @@ with customer_orders as (
         max(order_date) as most_recent_order_date,
         count(user_id) as number_of_customers
 
-    from raw.jaffle_shop.orders 
+    --from raw.jaffle_shop.orders 
+      from {{source('jaffle_shop_raw','orders')}}
 
     group by 1
 )
@@ -25,5 +26,5 @@ select
     ord.first_order_date,
     ord.most_recent_order_date,
     coalesce(ord.number_of_customers, 0) as number_of_customers
-from raw.jaffle_shop.customers customers
+from {{source('jaffle_shop_raw','customers') }}  customers
 left join customer_orders  ord on  customers.id = ord.customer_id
