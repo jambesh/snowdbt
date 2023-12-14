@@ -36,3 +36,5 @@ models:
       +materialized: view
     sales:
       +materialized: table
+    staging:
+      +materialize: view

@@ -2,7 +2,7 @@ version: 2
 
 sources:
     - name: jaffle_shop_raw
-      description: This is a replica of the Postgres database used by our app
+      description: This is a replica of the snow database used by our app
       database: raw
       schema: jaffle_shop
       tables:
